@@ -1,0 +1,47 @@
+# Nested Loops
+Similar to how you can nest if/elif/else statements, you can also nest loops!
+
+A nested loop is a loop with another loop inside. For example:
+
+for i in range(1, 6):
+  for j in range(1, 6):
+    print(i * j)
+
+There is an outer for loop with a nested inner for loop. In order to cycle through one iteration of the outer loop, we have to iterate through the entire nested loop.
+
+In Python, we can do the same thing with nested while loops:
+
+i = 0
+
+while i < 6:
+  j = 0
+  while j < 6:
+    print(i * j)
+    j = j + 1
+  i = i + 1
+
+Outside each while, we initialize simple counter variables i and j. With each iteration of the outer while loop, we cycle through 6 iterations of the nested while loop. We're able to exit these loops by updating the counter variables i and j after each iteration.
+
+# Example
+You can also use a mix of loop types for nesting! Check out the following example:
+
+import random
+
+lucky_number = random.randint(1, 9)
+not_found = True
+
+while not_found:
+  for i in range(1, 10):
+    if i == lucky_number:
+      not_found = False
+      break
+    else:
+      print(i)
+
+print(f"Yay I got my lucky number {lucky_number}! 🍀")
+
+The outer while loop runs as long as the not_found boolean variable is True.
+
+For the inner for loop, we're iterating from 1 to 9. We stop early when the i variable is equal to the lucky_number.
+
+To break out of the for loop, we use the break keyword. To break out of the outer while loop, we reassign False to the notFound variable.
